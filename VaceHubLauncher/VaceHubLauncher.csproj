@@ -9,6 +9,6 @@
  </PropertyGroup>
  <PropertyGroup Condition="'$(Configuration)'=='Debug'"><DebugSymbols>true</DebugSymbols><DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants></PropertyGroup>
  <PropertyGroup Condition="'$(Configuration)'=='Release'"><Optimize>true</Optimize><UseDotNetNativeToolchain>true</UseDotNetNativeToolchain></PropertyGroup>
- <ItemGroup><ApplicationDefinition Include="App.xaml"><Generator>MSBuild:Compile</Generator></ApplicationDefinition><Compile Include="App.xaml.cs"><DependentUpon>App.xaml</DependentUpon></Compile><Compile Include="MainPage.cs"/><AppxManifest Include="Package.appxmanifest"/><Content Include="Assets\*.png"/><PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.14"/></ItemGroup>
+ <ItemGroup><Content Include="Properties\Default.rd.xml"/><ApplicationDefinition Include="App.xaml"><Generator>MSBuild:Compile</Generator></ApplicationDefinition><Compile Include="App.xaml.cs"><DependentUpon>App.xaml</DependentUpon></Compile><Compile Include="MainPage.cs"/><AppxManifest Include="Package.appxmanifest"/><Content Include="Assets\*.png"/><PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.14"/></ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
 </Project>

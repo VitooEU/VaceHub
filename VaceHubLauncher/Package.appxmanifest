@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap">
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" IgnorableNamespaces="uap mp">
 <Identity Name="VaceHubLauncher" Publisher="CN=VaceHub" Version="1.0.0.0" ProcessorArchitecture="x64"/>
+<mp:PhoneIdentity PhoneProductId="ea0ea8b2-4123-4515-af12-55bce8382b93" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 <Properties><DisplayName>VaceHub Launcher</DisplayName><PublisherDisplayName>VaceHub</PublisherDisplayName><Logo>Assets\StoreLogo.png</Logo></Properties>
 <Dependencies><TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0"/></Dependencies>
 <Resources><Resource Language="de-DE"/></Resources>
