@@ -1,0 +1,42 @@
+name: Xbox-Paket bauen
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'VaceHubLauncher/**'
+      - 'build/**'
+      - '.github/workflows/xbox-package.yml'
+      - 'INSTALL-XBOX.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: windows-2022
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: microsoft/setup-msbuild@v2
+      - name: Signiertes x64-Paket erstellen
+        shell: pwsh
+        env:
+          VACEHUB_PFX_BASE64: ${{ secrets.VACEHUB_PFX_BASE64 }}
+          VACEHUB_PFX_PASSWORD: ${{ secrets.VACEHUB_PFX_PASSWORD }}
+        run: ./build/Build-Xbox.ps1 -BuildNumber ${{ github.run_number }}
+      - name: Xbox-Paket zum Download bereitstellen
+        uses: actions/upload-artifact@v4
+        with:
+          name: VaceHub-Xbox-x64
+          path: artifacts/Xbox/
+          if-no-files-found: error
+          retention-days: 14
+      - name: Buildprotokoll sichern
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: VaceHub-Buildprotokoll
+          path: artifacts/build.log
+          if-no-files-found: ignore
+          retention-days: 7

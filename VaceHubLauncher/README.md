@@ -14,7 +14,11 @@ Stand: 16. November 2026. Vollständiger Projektquelltext, **kein fertig kompili
 - Kein Zugriff auf installierte Xbox-Retailspiele, kein Ersatz für das Xbox-Systemdashboard, keine Xbox-360/Series-S-Emulation.
 - Kein automatischer Start fremder EXE-Dateien. UWP ist isoliert. Ein späterer Start anderer Apps benötigt deren dokumentiertes, tatsächlich unterstütztes Aktivierungsprotokoll und Xbox-Tests. Ein pauschales „ROM an irgendeinen Emulator senden“ ist nicht implementiert.
 
-## Öffnen und bauen (Windows-PC erforderlich)
+## Ohne eigenen Windows-PC: GitHub Actions
+
+Siehe [INSTALL-XBOX.md](../INSTALL-XBOX.md). Der Windows-Build läuft auf GitHub; Download und Xbox-Installation sind unter Ubuntu möglich.
+
+## Öffnen und bauen (lokal: Windows-PC erforderlich)
 
 1. Projektordner auf einen Windows-10/11-PC kopieren.
 2. Visual Studio 2022 mit UWP-C#-Werkzeugen installieren. Je nach Installer ist UWP unter „Universal Windows Platform development“ oder als UWP-Komponente der Windows-Entwicklung aufgeführt. Windows 10 SDK **10.0.19041.0**, UWP .NET- und .NET-Native-Werkzeuge installieren. Keine WinUI-3-/Windows-App-SDK-App erstellen: Diese Vorlage ist klassisches UWP.
